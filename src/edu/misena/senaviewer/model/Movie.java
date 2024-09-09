@@ -1,6 +1,6 @@
 package edu.misena.senaviewer.model;
 
-public class Movie {
+public class Movie extends Film {
 
     public int id;
     public String title;
@@ -11,16 +11,13 @@ public class Movie {
     public boolean viewed;
     public int timeViewed;
 
-    // Constructor de la clase
+
     public Movie(String title, String genre, String creator, int duration, int year) {
-        this.title = title;
-        this.genre = genre;
-        this.creator = creator;
-        this.duration = duration;
-        this.year = year;
+        super (title, genre,creator,duration);
+
     }
 
-    // Getters y Setters
+
     public int getId() {
         return id;
     }
@@ -83,6 +80,20 @@ public class Movie {
 
     public void setTimeViewed(int timeViewed) {
         this.timeViewed = timeViewed;
+    }
+    @Override
+    public String toString() {
+        return "Movie{" +
+                super.toString() +
+                ", id=" + id +
+                ", title=" + title +
+                ", genre=" + genre +
+                ", creator=" + creator +
+                ", duration=" + duration +
+                ", year=" + year +
+                ", viewed=" + viewed +
+                ", timeViewed=" + timeViewed +
+                '}';
     }
 }
 
