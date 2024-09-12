@@ -1,5 +1,5 @@
 package edu.misena.senaviewer.model;
-public class Magazine {
+public class Magazine extends Publication {
     public int id;
     public String title;
     public String editionDate;
@@ -8,9 +8,7 @@ public class Magazine {
 
     // Constructor
     public Magazine(String title, String editionDate, String editorial) {
-        this.title = title;
-        this.editionDate = editionDate;
-        this.editorial = editorial;
+ super(title,editionDate,editorial);
     }
 
     public int getId() {
@@ -50,5 +48,18 @@ public class Magazine {
 
     public String getAuthors() {
         return authors;
-    }}
+    }
+    @Override
+    public String toString() {
+        return "Magazine{" +
+                super.toString() +
+                ", id=" + id +
+                ", title=" + title +
+                ", EditorialDate=" + editionDate +
+                ", editorial=" + editorial +
+                ", authors=" + authors +
+
+                '}';
+    }
+}
 
